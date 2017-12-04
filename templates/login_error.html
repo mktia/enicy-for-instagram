@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-error">
+  {% for i in contents.login_failed %}
+  <p>{{i}}</p>
+  {% endfor %}
+  <p><a href="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">TOP</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{
+  "language": "Indonesian",
+  "keywords": "Instagram, follow, unfollow, check",
+  "description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
+  "short_description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
+  "form": {
+    "username": "Username",
+    "password": "Password",
+    "button": "Start"
+  },
+  "page": {
+    "introduction": "SELAMAT DATANG DI ENICY!",
+    "summary": ["Aplikasi web untuk pengguna instagram"],
+    "description_top": [
+      "Situs ini emungkinkan Anda memeriksa siapa saja yang followers dan unfollowers Anda di Instagram.",
+      "Yang harus Anda lakukan adalah menekan tombolnya.",
+      "Mari menikmati kehidupan instagram yang nyaman!"
+    ]
+  },
+  "login_failed": [
+    "Oops! Login failed.",
+    "Please login again."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "language": "Japanese",
+  "title_ja": "ENICY [エニシー] for Instagram",
+  "keywords": "インスタグラム, 片思い, 相互フォロー, フォローチェック",
+  "description": "インスタグラムでの片思い、相互フォローが簡単にチェックできるWebアプリ ENICY [エニシー] for Instagram",
+  "short_description": "インスタグラムのフォローチェックは ENICY [エニシー] で。",
+  "form": {
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "button": "解析開始"
+  },
+  "page": {
+    "introduction": "WELCOME TO ENICY!",
+    "summary": ["インスタグラムユーザー向け アカウント管理をサポートする WEB アプリケーション"],
+    "description_top": ["ENICY (エニシー) は<strong>インスタグラムのフォロー・フォロワー関係を調べる</strong> Web アプリです。"],
+    "list": [
+      "Web ページなのでスマホでも PC でも OK!",
+      "ユーザー名とパスワードを入れるだけの簡単操作",
+      "気軽に無料でご利用いただけます"
+    ],
+    "description_bottom": ["ぜひ、快適なインスタグラムライフに役立ててください！"]
+  },
+  "login_failed": [
+    "ログインに失敗しました。",
+    "再度ログインをお試しください。"
+  ]
+}

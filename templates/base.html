@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {%- block head %}
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <meta charset="utf-8" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- TODO:activate -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87972162-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-87972162-3');
+  </script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="{{contents.keyword}}" />
+  <meta name="description" content="{{contents.description}}" />
+  <title>{% block title %}{% endblock title %}</title>
+  <meta name="theme-color" content="#4169e1">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="{{contents.description}}">
+  <meta name="twitter:title" content="{{info.name}}">
+  <meta name="twitter:url" content="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
+  <meta name="twitter:image" content="{{info.url}}/static/ogp-image.png">
+  <meta name="twitter:domain" content="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
+  <meta name="twitter:creator" content="@{{info.twitter}}">
+  <meta name="twitter:site" content="@{{info.twitter}}">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{{contents.description}}">
+  <meta property="og:title" content="{{info.name}}">
+  <meta property="og:url" content="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
+  <meta property="og:image" content="{{info.url}}/static/ogp-image.png">
+  <meta property="og:site_name" content="{{info.name}}">
+  <meta property="og:locale" content="ja_JP">
+  {#- alternate の content には ISO 639-1 言語コード及び ISO 3166-1 国コードを用いる #}
+  {%- for i in info.language_code_list %}
+  <meta property="og:locale:alternate" content="{{i}}">
+  {%- endfor %}
+  {#- 他に対応している言語のページを載せる #}
+  {%- for i in info.language_code_list %}
+  {%- if i != lang %}
+  <link rel="alternate" hreflang="{{i}}" href="{{info.url}}/{{i}}">
+  {% endif %}
+  {%- endfor %}
+  <link rel="shortcut icon" href="../static/favicon.ico" />
+  <link rel="stylesheet" href="../static/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  {%- endblock %}
+  {#- VK #}
+  <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+  {#- Google plus #}
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <div class="contents-width">
+        <img class="header__icon" src="../static/icon.jpg" />
+        <h1 class="header__title">
+          <a class="header__link" href="{{info.url}}">{{info.name}}</a>
+        </h1>
+      </div>
+    </header>
+  </div>
+  {% block content %}{% endblock %}
+  {#- Facebook SDK #}
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  {#- Twitter #}
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+  {#- each sns button #}
+  <div class="contents-width">
+    <div class="sns">
+      <span class="sns__p">LET'S SHARE!</span>
+      <div class="fb-like"
+        data-href="https://instagram.enicy.co"
+        data-layout="standard"
+        data-action="like"
+        data-show-faces="true">
+      </div>
+      {#- <div class="sns__button">
+        <a href=”fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789”>Messenger</a>
+      </div> #}
+      <div class="sns__button">
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+      </div>
+      <div class="sns__button g-plus" data-action="share" data-href="https://instagram.enicy.co"></div>
+      <div class="sns__button line-it-button" data-lang="ja" data-type="share-a" data-url="https://instagram.enicy.co" style="display: none;"></div>
+      <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      <div class="sns__button">
+        <script type="text/javascript">
+          document.write(VK.Share.button({url: "https://instagram.enicy.co"},{type: "round", text: "Share"}));
+        </script>
+      </div>
+      <div class="sns__button" id="ok_shareWidget"></div>
+      <script>
+      !function (d, id, did, st, title, description, image) {
+        var js = d.createElement("script");
+        js.src = "https://connect.ok.ru/connect.js";
+        js.onload = js.onreadystatechange = function () {
+        if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+          if (!this.executed) {
+            this.executed = true;
+            setTimeout(function () {
+              OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+            }, 0);
+          }
+        }};
+        d.documentElement.appendChild(js);
+      }(document,"ok_shareWidget","https://instagram.enicy.co",'{"sz":20,"st":"rounded","nt":1}',"","","");
+      </script>
+    </div>
+  </div>
+  <div class="footer">
+    <footer>
+      <p><a href="/privacy">Privacy Policy</a> | <a href="/contact">Contact Us</a></p>
+      <p>&copy; 2017 ENICY.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Result | {{info.name}}{% endblock title %}
+{% block content %}
+<div class="result-index contents-width">
+  <p><a href="#follows">片思い</a> | <a href="#followers">片思われ</a> | <a href="#friends">両思い</a></p>
+</div>
+<section class="result contents-width">
+  <h2 id="follows">あなたが片思いしているユーザー ({{len.follows_only}})</h2>
+  {%- if len.follows_only != 0 %}
+  {%- for i in follows %}
+  <div class="result__box">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+      <img class="result__img" src="{{i.profile_pic_url}}" />
+      <div class="result__user">
+        <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
+        <p>@{{i.username}}</p>
+      </div>
+    </a>
+  </div>
+  {%- if loop.index % 12 == 0 %}
+  <div class="result__ad-resp">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- insta-enicy-result-resp -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7611852587780285"
+         data-ad-slot="5709684033"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+  {%- else %}
+  <p>あなたが片思いしている人は誰もいませんでした。</p>
+  {%- endif %}
+  <h2 id="followers">あなたがフォローを返していないユーザー ({{len.followed_only}})</h2>
+  {%- if len.followed_only != 0 %}
+  {%- for i in followers %}
+  <div class="result__box">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+      <img class="result__img" src="{{i.profile_pic_url}}" />
+      <div class="result__user">
+        <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
+        <p>@{{i.username}}</p>
+      </div>
+    </a>
+  </div>
+  {%- if loop.index % 12 == 0 %}
+  <div class="result__ad-resp">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- insta-enicy-result-resp -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7611852587780285"
+         data-ad-slot="5709684033"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+  {%- else %}
+  <p>あなたがフォローを返していない人はいませんでした。</p>
+  {%- endif %}
+  <h2 id="friends">あなたと相互フォロー中のユーザー ({{len.friends}})</h2>
+  {%- if len.friends != 0 %}
+  {%- for i in friends %}
+  <div class="result__box">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+      <img class="result__img" src="{{i.profile_pic_url}}" />
+      <div class="result__user">
+        <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
+        <p>@{{i.username}}</p>
+      </div>
+    </a>
+  </div>
+  {%- if loop.index % 12 == 0 %}
+  <div class="result__ad-resp">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- insta-enicy-result-resp -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7611852587780285"
+         data-ad-slot="5709684033"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  {%- endif %}
+  {%- endfor %}
+  {%- else %}
+  <p>あなたと相互フォローしている人はいませんでした。</p>
+  {%- endif %}
+</section>
+{% endblock %}

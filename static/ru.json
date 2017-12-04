@@ -1,0 +1,26 @@
+{
+  "language": "Russian",
+  "keywords": "Instagram, follow, unfollow, check, Инстаграм",
+  "description": "Веб-приложение, которое позволяет легко проверить невзаимных подписчиков и взаимных подписчиков в Инстаграм",
+  "short_description": "Веб-приложение, которое позволяет легко проверить невзаимных подписчиков и взаимных подписчиков в Инстаграм",
+  "form": {
+    "username": "Username",
+    "password": "Password",
+    "button": "Start"
+  },
+  "page": {
+    "introduction": "Добро пожаловать в ENICY!",
+    "summary": [],
+    "description_top": ["ENICY - это веб-приложение, которое проверяет подписки и подписчиков в Инстаграм."],
+    "list": [
+      "Работает везде ",
+      "Вам не придётся ничего скачивать и устанавливать",
+      "Приложением можно пользоваться бесплатно"
+    ],
+    "description_bottom": []
+  },
+  "login_failed": [
+    "Oops! Login failed.",
+    "Please login again."
+  ]
+}

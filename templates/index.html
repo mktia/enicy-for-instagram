@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}{% if contents.language == 'Japanese' %}{{contents.title_ja}}{% else %}{{info.name}}{% endif %} | {{contents.short_description}}{% endblock title %}
+{% block content %}
+{#- 言語ごとページを切り替えるスクリプト #}
+<script>
+  window.onload = function() {
+    let filter = document.getElementById('lang');
+    filter.addEventListener('change', changeLanguage);
+  }
+
+  function changeLanguage() {
+    var num = document.getElementById('lang').selectedIndex;
+    var val = document.getElementById('lang').options[num].value;
+    location.href = "./" + val;
+  }
+</script>
+<div class="select-language contents-width">
+  language: <select class="select-language__box" name="lang" id="lang" onchange="changeLanguage();">
+    <option selected disabled>Choose</option>
+    <option value="">Japanese</option>
+    {%- for i in info.language_list %}
+    <option value="{{i.code}}">{{i.language}}</option>
+    {%- endfor %}
+</select>
+</div>
+<div class="box">
+  <h2 class="box__title">{{contents.page.introduction}}</h2>
+  {%- if contents.page.summary|length != 0 %}
+  <p class="box__p">{{contents.page.summary[0]}}</p>
+  {%- endif %}
+</div>
+<section class="contents-width">
+  {%- for i in contents.page.description_top %}
+  <p>{{i|safe}}</p>
+  {%- endfor %}
+  {%- if contents.page.list|length != 0 %}
+  <ol>
+  {%- for i in contents.page.list %}
+    <li>{{i|safe}}</li>
+  {%- endfor %}
+  </ol>
+  {%- endif %}
+  {%- if contents.page.description_bottom|length != 0 %}
+  {%- for i in contents.page.description_bottom %}
+  <p>{{i|safe}}</p>
+  {%- endfor %}
+  {%- endif %}
+</section>
+<div class="ad-resp">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- insta-enicy-top-resp -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7611852587780285"
+       data-ad-slot="3462794643"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="ad-336x2">
+  <div class="ad-336x2__left">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- insta-enicy-top-l-336 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:336px;height:280px"
+         data-ad-client="ca-pub-7611852587780285"
+         data-ad-slot="2028856681"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <div class="ad-336x2__right">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- insta-enicy-top-r-336 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:336px;height:280px"
+         data-ad-client="ca-pub-7611852587780285"
+         data-ad-slot="1098918390"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+<section class="form contents-width">
+  <form action="/result" method="post">
+    <p><input class="form__textbox" type="text" name="username" placeholder="{{contents.form.username}}" /></p>
+    <p><input class="form__textbox" type="password" name="password" placeholder="{{contents.form.password}}" /></p>
+    <input class="form__submit" type="submit" value="{{contents.form.button}}" />
+  </form>
+</section>
+<div class="attention contents-width">
+  {%- if contents.language == 'Japanese' %}
+  <p>*<a href="/privacy">プライバシーポリシー</a>をご理解の上、解析開始ボタンを押してください</p>
+  {%- else %}
+  <p>*By using this Web site, you agree that you have read and agree with our Terms of Use and Privacy Policy. (Sorry. We're preparing policy in English.)</p>
+  {%- endif %}
+</div>
+{% endblock %}
