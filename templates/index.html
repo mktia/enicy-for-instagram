@@ -85,9 +85,9 @@
 <section class="form contents-width">
   <p>{{contents.form.description|default('Sign in with Instagram', true)}}</p>
   <form action="/result" method="post">
-    <p><input class="form__textbox" type="text" name="username" placeholder="{{contents.form.username}}" /></p>
-    <p><input class="form__textbox" type="password" name="password" placeholder="{{contents.form.password}}" /></p>
-    <input class="form__submit" type="submit" value="{{contents.form.button}}" />
+    <p><input class="form__textbox" type="text" name="username" placeholder="{{contents.form.username|default('USER NAME', true)}}" /></p>
+    <p><input class="form__textbox" type="password" name="password" placeholder="{{contents.form.password|default('PASSWORD', true)}}" /></p>
+    <input class="form__submit" type="submit" value="{{contents.form.button|default('Start', true)}}" />
   </form>
 </section>
 <div class="attention contents-width">

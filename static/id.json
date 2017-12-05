@@ -4,7 +4,7 @@
   "description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
   "short_description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
   "form": {
-    "username": "USER NAME (ex. @example)",
+    "username": "USER NAME",
     "password": "PASSWORD",
     "button": "Start",
   },
