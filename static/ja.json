@@ -5,13 +5,15 @@
   "description": "インスタグラムでの片思い、相互フォローが簡単にチェックできるWebアプリ ENICY [エニシー] for Instagram",
   "short_description": "インスタグラムのフォローチェックは ENICY [エニシー] で。",
   "form": {
+    "description": "インスタグラムのユーザー名、パスワードを入力してください。",
     "username": "ユーザー名",
     "password": "パスワード",
-    "button": "解析開始"
+    "button": "解析開始",
+    "attention": "プライバシーポリシーをご理解の上、解析開始ボタンを押してください。これを押した時点で、ご同意いただけたものとみなします。また、ご入力いただいたアカウント情報は解析のみに用い、解析終了後速やかに削除されます。"
   },
   "page": {
     "introduction": "WELCOME TO ENICY!",
-    "summary": ["インスタグラムユーザー向け アカウント管理をサポートする WEB アプリケーション"],
+    "summary": ["インスタグラムユーザー向けのアカウント管理をサポートする WEB アプリケーション"],
     "description_top": ["ENICY (エニシー) は<strong>インスタグラムのフォロー・フォロワー関係を調べる</strong> Web アプリです。"],
     "list": [
       "Web ページなのでスマホでも PC でも OK!",

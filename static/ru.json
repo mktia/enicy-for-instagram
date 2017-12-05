@@ -4,9 +4,11 @@
   "description": "Веб-приложение, которое позволяет легко проверить невзаимных подписчиков и взаимных подписчиков в Инстаграм",
   "short_description": "Веб-приложение, которое позволяет легко проверить невзаимных подписчиков и взаимных подписчиков в Инстаграм",
   "form": {
-    "username": "Username",
-    "password": "Password",
-    "button": "Start"
+    "description": "Sign in with Instagram",
+    "username": "USER NAME (ex.@enicy)",
+    "password": "PASSWORD",
+    "button": "Start",
+    "attention": "By using this Web site, you agree that you have read and agree with our Terms of Use and Privacy Policy. (Sorry. We're preparing our Privacy Policy in English.)"
   },
   "page": {
     "introduction": "Добро пожаловать в ENICY!",

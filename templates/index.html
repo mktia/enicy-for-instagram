@@ -83,6 +83,7 @@
   </div>
 </div>
 <section class="form contents-width">
+  <p>{{contents.form.description}}</p>
   <form action="/result" method="post">
     <p><input class="form__textbox" type="text" name="username" placeholder="{{contents.form.username}}" /></p>
     <p><input class="form__textbox" type="password" name="password" placeholder="{{contents.form.password}}" /></p>
@@ -90,10 +91,6 @@
   </form>
 </section>
 <div class="attention contents-width">
-  {%- if contents.language == 'Japanese' %}
-  <p>*<a href="/privacy">プライバシーポリシー</a>をご理解の上、解析開始ボタンを押してください</p>
-  {%- else %}
-  <p>*By using this Web site, you agree that you have read and agree with our Terms of Use and Privacy Policy. (Sorry. We're preparing policy in English.)</p>
-  {%- endif %}
+  <p>*{{contents.form.attention}}</p>
 </div>
 {% endblock %}
