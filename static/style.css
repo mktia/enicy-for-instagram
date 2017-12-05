@@ -76,13 +76,14 @@ body {
   background-color: #4169e1;
   border: 0;
   color: #fff;
-  padding: 10px 16px;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 
 .form__textbox {
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px 10px;
-  width: 16px;
+  width: 280px;
 }
 
 .header {
@@ -148,7 +149,7 @@ body {
   padding-bottom: 4px;
   padding-left: 6px;
   padding-top: 4px;
-  width: 288px;
+  width: 90%;
 }
 
 .result__img {
@@ -343,6 +344,10 @@ body {
 
   .box__p {
     width: 100%;
+  }
+
+  .result__box {
+    width: 288px;
   }
 
   .sns__button--padding-top-pc {
