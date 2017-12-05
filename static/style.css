@@ -1,7 +1,7 @@
 body {
   background-color: #f7f7f7;
   color: #555;
-  font-family: 'Yu Gothic';
+  font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'HiraKakuProN-W3', 'Meiryo', sans-serif;
   margin: 0;
   width: 100%;
 }
