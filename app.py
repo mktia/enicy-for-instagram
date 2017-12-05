@@ -9,12 +9,11 @@ basic_information = {
     'name': 'ENICY for Instagram',
     'url': 'https://instagram.enicy.co',
     'twitter': 'enicy_',
-    'language_code_list':  ['id', 'ja', 'ru'],
     'language_list': [
-        {'code': 'id', 'language': 'Indonesian'},
-        {'code': 'ru', 'language': 'Russian'}
-    ],
-    'locale_list': ['id_ID', 'ru_RU']
+        {'code': 'ja', 'language': 'Japanese', 'locale': 'ja_Ja'},
+        {'code': 'id', 'language': 'Indonesian', 'locale': 'id_ID'},
+        {'code': 'ru', 'language': 'Russian', 'locale': 'ru_RU'}
+    ]
 }
 
 

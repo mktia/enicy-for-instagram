@@ -189,8 +189,13 @@ body {
   margin-right: 5px;
 }
 
+.sns__button--padding-top {
+  padding-top: 6px;
+}
+
 .sns__p {
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 /* Mobile SS (iPhone 5) */

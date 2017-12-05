@@ -39,14 +39,12 @@
   <meta property="og:site_name" content="{{info.name}}">
   <meta property="og:locale" content="ja_JP">
   {#- alternate の content には ISO 639-1 言語コード及び ISO 3166-1 国コードを用いる #}
-  {%- for i in info.language_code_list %}
-  <meta property="og:locale:alternate" content="{{i}}">
+  {%- for i in info.language_list if i.locale != 'ja_Ja' %}
+  <meta property="og:locale:alternate" content="{{i.locale}}">
   {%- endfor %}
   {#- 他に対応している言語のページを載せる #}
-  {%- for i in info.language_code_list %}
-  {%- if i != lang %}
-  <link rel="alternate" hreflang="{{i}}" href="{{info.url}}/{{i}}">
-  {% endif %}
+  {%- for i in info.language_list if i.code != lang %}
+  <link rel="alternate" hreflang="{{i.code}}" href="{{info.url}}/{{i.code}}">
   {%- endfor %}
   <link rel="shortcut icon" href="../static/favicon.ico" />
   <link rel="stylesheet" href="../static/style.css" />
@@ -83,7 +81,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
+    js.src = 'https://connect.facebook.net/{% for i in info.language_list if i.code == lang %}{{i.locale}}{% endfor %}/sdk.js#xfbml=1&version=v2.11';
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
   {#- Twitter #}
@@ -108,26 +106,41 @@
     <div class="sns">
       <p class="sns__p">LET'S SHARE THIS APP!!</p>
       <div class="sns__button fb-like"
-        data-href="https://instagram.enicy.co"
-        data-layout="standard"
+        data-href="https://fb.me/enicy.official"
+        data-layout="button_count"
         data-action="like"
-        data-show-faces="true">
+        data-size="small"
+        data-show-faces="true"
+        data-share="true">
       </div>
-      {#- <div class="sns__button">
+      {#- <div class="sns__button sns__button--padding-top">
         <a href=”fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789”>Messenger</a>
       </div> #}
-      <div class="sns__button">
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{contents.description}}">Tweet</a>
+      <div class="sns__button sns__button--padding-top">
+        <a class="twitter-share-button"
+          href="https://twitter.com/intent/tweet?text={{contents.description}}">Tweet</a>
       </div>
-      <div class="sns__button g-plus" data-action="share" data-href="https://instagram.enicy.co"></div>
-      <div class="sns__button line-it-button" data-lang="ja" data-type="share-a" data-url="https://instagram.enicy.co" style="display: none;"></div>
-      <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-      <div class="sns__button">
+      <div class="sns__button sns__button--padding-top">
+        <div class="g-plus"
+          data-action="share"
+          data-href="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
+        </div>
+      </div>
+      <div class="sns__button sns__button--padding-top">
+        <div class="line-it-button"
+          data-lang="{{lang}}"
+          data-type="share-a"
+          data-url="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}}"
+          style="display: none;">
+        </div>
+        <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      </div>
+      <div class="sns__button sns__button--padding-top">
         <script type="text/javascript">
-          document.write(VK.Share.button({url: "https://instagram.enicy.co"},{type: "round", text: "Share"}));
+          document.write(VK.Share.button({url: "{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}"},{type: "round", text: "Share"}));
         </script>
       </div>
-      <div class="sns__button" id="ok_shareWidget"></div>
+      <div class="sns__button sns__button--padding-top" id="ok_shareWidget"></div>
       <script>
       !function (d, id, did, st, title, description, image) {
         var js = d.createElement("script");
@@ -142,7 +155,7 @@
           }
         }};
         d.documentElement.appendChild(js);
-      }(document,"ok_shareWidget","https://instagram.enicy.co",'{"sz":20,"st":"rounded","nt":1}',"","","");
+      }(document,"ok_shareWidget","{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}",'{"sz":20,"st":"rounded","nt":1}',"","","");
       </script>
     </div>
   </div>
