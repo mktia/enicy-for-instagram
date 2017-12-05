@@ -180,7 +180,7 @@ body {
 }
 
 .sns {
-  padding-top: 40px
+  padding-top: 10px
 }
 
 .sns__button {
@@ -189,9 +189,7 @@ body {
 }
 
 .sns__p {
-  float: left;
   font-weight: bold;
-  margin-right: 10px;
 }
 
 /* Mobile SS (iPhone 5) */
