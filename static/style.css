@@ -193,6 +193,10 @@ body {
   padding-top: 6px;
 }
 
+.sns__button--padding-top-pc {
+  padding-top: 6px;
+}
+
 .sns__p {
   font-weight: bold;
   margin-bottom: 0;
@@ -332,6 +336,10 @@ body {
 
   .box__p {
     width: 100%;
+  }
+
+  .sns__button--padding-top-pc {
+    padding-top: 0;
   }
 }
 
