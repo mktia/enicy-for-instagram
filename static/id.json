@@ -4,11 +4,9 @@
   "description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
   "short_description": "Cara yang untuk melihat siapa yang tidak memfollow kamu atau yang unfollowers kamu",
   "form": {
-    "description": "Sign in with Instagram",
-    "username": "USER NAME (ex.@enicy)",
+    "username": "USER NAME (ex. @example)",
     "password": "PASSWORD",
     "button": "Start",
-    "attention": "By using this Web site, you agree that you have read and agree with our Terms of Use and Privacy Policy. (Sorry. We're preparing our Privacy Policy in English.)"
   },
   "page": {
     "introduction": "SELAMAT DATANG DI ENICY!",

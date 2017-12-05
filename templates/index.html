@@ -83,7 +83,7 @@
   </div>
 </div>
 <section class="form contents-width">
-  <p>{{contents.form.description}}</p>
+  <p>{{contents.form.description|default('Sign in with Instagram', true)}}</p>
   <form action="/result" method="post">
     <p><input class="form__textbox" type="text" name="username" placeholder="{{contents.form.username}}" /></p>
     <p><input class="form__textbox" type="password" name="password" placeholder="{{contents.form.password}}" /></p>
@@ -91,6 +91,6 @@
   </form>
 </section>
 <div class="attention contents-width">
-  <p>*{{contents.form.attention|safe}}</p>
+  <p>*{{contents.form.attention|safe|default('By using this Web site, you agree that you have read and agree with our Terms of Use and Privacy Policy. (Sorry. We\'re preparing our Privacy Policy in English.)', true)}}</p>
 </div>
 {% endblock %}
