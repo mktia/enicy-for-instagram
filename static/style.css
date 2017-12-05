@@ -125,6 +125,10 @@ body {
   padding-top: 48px;
 }
 
+.policy {
+  padding-bottom: 20px;
+}
+
 .result h2 {
   clear:both;
   padding-top: 30px;
