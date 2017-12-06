@@ -3,10 +3,10 @@
 {% block title %}Result | {{info.name}}{% endblock title %}
 {% block content %}
 <div class="result-index contents-width">
-  <p><a href="#follows">片思い</a> | <a href="#followers">片思われ</a> | <a href="#friends">両思い</a></p>
+  <p><a href="#follows">{{contents.result.follows.link|default('following', true)}}</a> | <a href="#followers">{{contents.result.followers.link|default('be followed', true)}}</a> | <a href="#friends">{{contents.result.friends.link|default('friends', true)}}</a></p>
 </div>
 <section class="result contents-width">
-  <h2 id="follows">あなたが片思いしているユーザー ({{len.follows_only}})</h2>
+  <h2 id="follows">{{contents.result.follows.title|default('You follow but not followed by', true)}} ({{len.follows_only}})</h2>
   {%- if len.follows_only != 0 %}
   {%- for i in follows %}
   <div class="result__box">
@@ -34,9 +34,9 @@
   {%- endif %}
   {%- endfor %}
   {%- else %}
-  <p>あなたが片思いしている人は誰もいませんでした。</p>
+  <p>{{contents.result.follows.none|default('None.', true)}}</p>
   {%- endif %}
-  <h2 id="followers">あなたがフォローを返していないユーザー ({{len.followed_only}})</h2>
+  <h2 id="followers">{{contents.result.followers.title|default('You don\'t follow but be followed by', true)}} ({{len.followed_only}})</h2>
   {%- if len.followed_only != 0 %}
   {%- for i in followers %}
   <div class="result__box">
@@ -64,9 +64,9 @@
   {%- endif %}
   {%- endfor %}
   {%- else %}
-  <p>あなたがフォローを返していない人はいませんでした。</p>
+  <p>{{contents.result.followers.none|default('None.', true)}}</p>
   {%- endif %}
-  <h2 id="friends">あなたと相互フォロー中のユーザー ({{len.friends}})</h2>
+  <h2 id="friends">{{contents.result.friends.title|default('Your friends', true)}} ({{len.friends}})</h2>
   {%- if len.friends != 0 %}
   {%- for i in friends %}
   <div class="result__box">
@@ -94,7 +94,7 @@
   {%- endif %}
   {%- endfor %}
   {%- else %}
-  <p>あなたと相互フォローしている人はいませんでした。</p>
+  <p>{{contents.result.friends.none|default('None.', true)}}</p>
   {%- endif %}
 </section>
 {% endblock %}

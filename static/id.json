@@ -17,6 +17,11 @@
       "Mari menikmati kehidupan instagram yang nyaman!"
     ]
   },
+  "result": {
+    "follows": {},
+    "followers": {},
+    "friends": {}
+  },
   "login_failed": [
     "Oops! Login failed.",
     "Please login again."

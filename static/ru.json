@@ -21,6 +21,11 @@
     ],
     "description_bottom": []
   },
+  "result": {
+    "follows": {},
+    "followers": {},
+    "friends": {}
+  },
   "login_failed": [
     "Oops! Login failed.",
     "Please login again."
