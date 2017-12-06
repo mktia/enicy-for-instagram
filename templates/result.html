@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% block robots %}<meta name="robots" content="noindex" />{% endblock robots %}
 {% block title %}Result | {{info.name}}{% endblock title %}
 {% block content %}
 <div class="result-index contents-width">
@@ -9,7 +10,7 @@
   {%- if len.follows_only != 0 %}
   {%- for i in follows %}
   <div class="result__box">
-    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}" rel="nofollow">
       <img class="result__img" src="{{i.profile_pic_url}}" />
       <div class="result__user">
         <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
@@ -39,7 +40,7 @@
   {%- if len.followed_only != 0 %}
   {%- for i in followers %}
   <div class="result__box">
-    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}" rel="nofollow">
       <img class="result__img" src="{{i.profile_pic_url}}" />
       <div class="result__user">
         <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
@@ -69,7 +70,7 @@
   {%- if len.friends != 0 %}
   {%- for i in friends %}
   <div class="result__box">
-    <a class="result__link" href="https://www.instagram.com/{{i.username}}">
+    <a class="result__link" href="https://www.instagram.com/{{i.username}}" rel="nofollow">
       <img class="result__img" src="{{i.profile_pic_url}}" />
       <div class="result__user">
         <p>{%- if i.full_name != '' %}{{i.full_name}}{% else %}&nbsp;{% endif %}</p>
