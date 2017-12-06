@@ -1,0 +1,30 @@
+{
+  "short_name": "ENICY for Instagram",
+  "name": "ENICY for Instagram",
+  "icons": [
+    {
+      "src": "launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "launcher-icon-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher-icon-3x.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "launcher-icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/?utm_source=launcher",
+  "background_color": "#f7f7f7",
+  "theme_color": "#4169e1",
+  "display": "standalone"
+}

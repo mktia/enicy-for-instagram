@@ -49,6 +49,8 @@
   {%- endfor %}
   <link rel="shortcut icon" href="../static/favicon.ico" />
   <link rel="stylesheet" href="../static/style.css" />
+  {#- Web application manifest #}
+  <link rel="manifest" href="../static/manifest.json">
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
   {%- endblock %}
   {#- VK #}
@@ -64,6 +66,19 @@
       google_ad_client: "ca-pub-7611852587780285",
       enable_page_level_ads: true
     });
+  </script>
+  {#- PWA #}
+  <script>
+  window.addEventListener('load', function() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register("../static/serviceWorker.js")
+      .then(function(registration) {
+        console.log("serviceWorker registed.");
+      }).catch(function(error) {
+        console.warn("serviceWorker error.", error);
+      });
+    }
+  });
   </script>
   <div class="header">
     <header>
