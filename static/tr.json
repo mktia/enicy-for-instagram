@@ -1,0 +1,24 @@
+{
+  "language": "Turkish",
+  "keywords": "İnstagram,takipçi,karşılıklı,Kontrol",
+  "description": "karşılıklı instagram aşağıdaki kontrol etmek için web uygulaması, ENICY for Instagram",
+  "short_description": "Takipçisini kontrol etmek için ENICY'yi kullanalım",
+  "form": {
+    "username": "Kullanıcı adı",
+    "password": "parola",
+    "button": "Analiz başlat"
+  },
+  "page": {
+    "introduction": "ENICY HOŞ GELDİNİZ!",
+    "summary": ["karşılıklı instagram aşağıdaki kontrol etmek için web uygulaması"],
+    "description_top": [
+      "bu web uygulamasını PC ve akıllı telefon ile tablet kullanarak kullanabilirsiniz!",
+      "Instagram kullanıcı adını ve şifresini girmeniz yeterlidir",
+      "Ücretsiz olarak mevcuttur"
+    ]
+  },
+  "login_failed": [
+    "Başarısız oturum açma",
+    "Lütfen tekrar giriş yapın."
+  ]
+}

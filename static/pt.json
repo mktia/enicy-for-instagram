@@ -1,0 +1,24 @@
+{
+  "language": "Portuguese",
+  "keywords": "Instagram,seguindo,seguidores, seguir, para confirmar",
+  "description": "ENICY for Instagram, A aplicação da web para verificar facilmente o seguimento unilateral e recíproco",
+  "short_description": "ENICY é o aplicativo da Web para verificar facilmente o seguimento unilateral e o recíproco",
+  "form": {
+    "username": "Nome de usuário",
+    "password": "Senha",
+    "button": "Entrar"
+  },
+  "page": {
+    "introduction": "BEM VINDO A ENICY!",
+    "summary": ["A aplicação da web para verificar facilmente o seguimento unilateral e recíproco"],
+    "description_top": [
+      "Você pode usar ENICY por PC e smartphones e tablets",
+      "Operação fácil apenas digitando nome de usuário e senha",
+      "Disponível gratuitamente"
+    ]
+  },
+  "login_failed": [
+    "Falha na autenticação",
+    "Por favor faça login novamente"
+  ]
+}

@@ -17,7 +17,7 @@
 <div class="select-language contents-width">
   language: <select class="select-language__box" name="lang" id="lang" onchange="changeLanguage();">
     <option selected disabled>SELECT</option>
-    <option value="">Japanese</option>
+    <option value="">日本語</option>
     {%- for i in info.language_list if i.code != 'ja' %}
     <option value="{{i.code}}">{{i.language}}</option>
     {%- endfor %}

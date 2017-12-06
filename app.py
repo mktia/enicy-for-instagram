@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, Response
 from InstagramAPI import InstagramAPI
 
 app = Flask(__name__)
@@ -10,9 +10,11 @@ basic_information = {
     'url': 'https://instagram.enicy.co',
     'twitter': 'enicy_',
     'language_list': [
-        {'code': 'ja', 'language': 'Japanese', 'locale': 'ja_Ja'},
-        {'code': 'id', 'language': 'Indonesian', 'locale': 'id_ID'},
-        {'code': 'ru', 'language': 'Russian', 'locale': 'ru_RU'}
+        {'code': 'ja', 'language': '日本語', 'locale': 'ja_Ja'},
+        {'code': 'id', 'language': 'Bahasa Indonesia', 'locale': 'id_ID'},
+        {'code': 'pt', 'language': 'português', 'locale': 'pt_BR'},
+        {'code': 'ru', 'language': 'русский язык', 'locale': 'ru_RU'},
+        {'code': 'tr', 'language': 'Türkçe', 'locale': 'tr_TR'}
     ]
 }
 
@@ -48,10 +50,22 @@ def index_id():
     return return_html(lang='id')
 
 
+@app.route('/pt')
+def index_pt():
+    """Portuguese"""
+    return return_html(lang='pt')
+
+
 @app.route('/ru')
 def index_ru():
     """Russian"""
     return return_html(lang='ru')
+
+
+@app.route('/tr')
+def index_tr():
+    """Turkish"""
+    return return_html(lang='tr')
 
 
 @app.route('/result', methods=['GET', 'POST'])
