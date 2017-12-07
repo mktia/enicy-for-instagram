@@ -179,7 +179,8 @@ body {
 }
 
 .select-language {
-  text-align: right;
+  padding-left: 20px;
+  //text-align: right;
 }
 
 .select-language__box {
@@ -265,7 +266,7 @@ body {
   }
 
   .header__title {
-    font-size: 26px;
+    //font-size: 24px;
   }
 
   .contact,
@@ -273,7 +274,7 @@ body {
   .policy,
   .result-index,
   .select-language {
-    padding-top: 60px;
+    padding-top: 64px;
   }
 }
 
@@ -285,11 +286,11 @@ body {
   }
 
   .header__icon {
-    height: 42px;
+    height: 36px;
   }
 
   .header__title {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .contact,
