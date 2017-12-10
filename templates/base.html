@@ -69,8 +69,10 @@
     }
   </style>
   {%- endif %}
+  {%- if lang == 'ru' %}
   {#- VK #}
   <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+  {%- endif %}
   {#- Google plus #}
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
@@ -144,12 +146,7 @@
         <a class="twitter-share-button"
           href="https://twitter.com/intent/tweet?text={{contents.description}}">Tweet</a>
       </div>
-      <div class="sns__button sns__button--padding-top">
-        <div class="g-plus"
-          data-action="share"
-          data-href="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
-        </div>
-      </div>
+      {%- if lang == 'ja' or lang == 'id' %}
       <div class="sns__button sns__button--padding-top">
         <div class="line-it-button"
           data-lang="{{lang}}"
@@ -159,6 +156,8 @@
         </div>
         <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
       </div>
+      {%- endif %}
+      {%- if lang == 'ru' %}
       <div class="sns__button sns__button--padding-top">
         <script type="text/javascript">
           document.write(VK.Share.button({url: "{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}"},{type: "round", text: "Share"}));
@@ -181,6 +180,7 @@
         d.documentElement.appendChild(js);
       }(document,"ok_shareWidget","{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}",'{"sz":20,"st":"rounded","nt":1}',"","","");
       </script>
+      {%- endif %}
       <div class="sns__button sns__button--padding-top-pc">
         <div class="fb-like"
           data-href="https://fb.me/enicy.official"
@@ -189,6 +189,12 @@
           data-size="small"
           data-show-faces="true"
           data-share="true">
+        </div>
+      </div>
+      <div class="sns__button sns__button--padding-top">
+        <div class="g-plus"
+          data-action="share"
+          data-href="{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}">
         </div>
       </div>
     </div>
