@@ -10,7 +10,7 @@ basic_information = {
     'url': 'https://instagram.enicy.co',
     'twitter': 'enicy_',
     'language_list': [
-        {'code': 'ja', 'language': '日本語', 'locale': 'ja_Ja'},
+        {'code': 'ja', 'language': '日本語', 'locale': 'ja_JP'},
         {'code': 'id', 'language': 'Bahasa Indonesia', 'locale': 'id_ID'},
         {'code': 'pt', 'language': 'português', 'locale': 'pt_BR'},
         {'code': 'ru', 'language': 'русский язык', 'locale': 'ru_RU'},
