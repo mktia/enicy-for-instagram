@@ -170,28 +170,30 @@
       </div>
       {%- endif %}
       {%- if lang == 'ru' %}
+      <div  class="sns__button sns__button--padding-top">
+        <div id="ok_shareWidget"></div>
+        <script>
+        !function (d, id, did, st, title, description, image) {
+          var js = d.createElement("script");
+          js.src = "https://connect.ok.ru/connect.js";
+          js.onload = js.onreadystatechange = function () {
+          if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+            if (!this.executed) {
+              this.executed = true;
+              setTimeout(function () {
+                OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+              }, 0);
+            }
+          }};
+          d.documentElement.appendChild(js);
+        }(document,"ok_shareWidget","{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}",'{"sz":20,"st":"rounded","nt":1}',"","","");
+        </script>
+      </div>
       <div class="sns__button sns__button--padding-top">
         <script type="text/javascript">
           document.write(VK.Share.button({url: "{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}"},{type: "round", text: "Share"}));
         </script>
       </div>
-      <div class="sns__button sns__button--padding-top" id="ok_shareWidget"></div>
-      <script>
-      !function (d, id, did, st, title, description, image) {
-        var js = d.createElement("script");
-        js.src = "https://connect.ok.ru/connect.js";
-        js.onload = js.onreadystatechange = function () {
-        if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-          if (!this.executed) {
-            this.executed = true;
-            setTimeout(function () {
-              OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
-            }, 0);
-          }
-        }};
-        d.documentElement.appendChild(js);
-      }(document,"ok_shareWidget","{{info.url}}{% if lang != 'ja' %}/{{lang}}{% endif %}",'{"sz":20,"st":"rounded","nt":1}',"","","");
-      </script>
       {%- endif %}
       <div class="sns__button sns__button--padding-top">
         <div class="g-plus"
