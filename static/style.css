@@ -114,6 +114,7 @@ body {
   color: #444;
   font-family: Cinzel, serif;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 .header__title {
