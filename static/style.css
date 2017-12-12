@@ -249,6 +249,20 @@ body {
   .select-language {
     padding-top: 60px;
   }
+  #follows{
+    margin-top : -50px;
+    padding-top : 50px;
+  }
+
+  #followers{
+    margin-top : -50px;
+    padding-top : 50px;
+  }
+
+  #friends{
+    margin-top : -50px;
+    padding-top : 50px;
+  }
 }
 
 /* Mobile S (Galaxy 5S) */
@@ -276,6 +290,20 @@ body {
   .result-index,
   .select-language {
     padding-top: 64px;
+  }
+  #follows{
+    margin-top : -58px;
+    padding-top : 58px;
+  }
+
+  #followers{
+    margin-top : -58px;
+    padding-top : 58px;
+  }
+
+  #friends{
+    margin-top : -58px;
+    padding-top : 58px;
   }
 }
 
