@@ -430,4 +430,18 @@ body {
   .select-language {
     padding-top: 80px;
   }
+  #follows{
+    margin-top : -70px;
+    padding-top : 70px;
+  }
+
+  #followers{
+    margin-top : -70px;
+    padding-top : 70px;
+  }
+
+  #friends{
+    margin-top : -70px;
+    padding-top : 70px;
+  }
 }
