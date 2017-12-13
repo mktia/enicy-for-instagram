@@ -7,6 +7,10 @@ body {
   width: 100%;
 }
 
+input[type="submit"] {
+    -webkit-appearance:none;
+}
+
 .ad-336x2 {
   display: none;
   padding-bottom: 0;
