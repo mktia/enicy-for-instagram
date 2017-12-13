@@ -28,11 +28,19 @@ body {
 .box {
   background: linear-gradient(-135deg, #1400c8, #b900b4, #f50000);
   height: 28px;
-  margin-top: 20px;
+  //margin-top: 20px;
   padding-bottom: 128px;
   padding-top: 100px;
   text-align: center;
   width: 100%;
+}
+
+.box,
+.contact,
+.login-error,
+.policy,
+.result-index {
+  margin-top: 48px;
 }
 
 .box__p {
@@ -87,7 +95,7 @@ body {
 .form__textbox {
   font-size: 18px;
   padding: 5px 10px;
-  width: 280px;
+  width: 260px;
 }
 
 .header {
@@ -125,12 +133,43 @@ body {
   margin: 0;
 }
 
-.contact,
-.login-error,
-.policy,
-.result-index,
-.select-language {
-  padding-top: 48px;
+.language-base {
+  color: #aaa;
+  z-index: 3;
+}
+
+.language-base,
+.language-select {
+  margin-top: 6px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+}
+
+.language-base__icon {
+  font-size: 22px;
+  margin-left: auto;
+  width: 36px;
+}
+
+.language-select {
+  z-index: 4;
+}
+
+.language-select__button {
+  margin-left: auto;
+  opacity: 0;
+}
+
+.language-select__button,
+.language-select__button select {
+  width: 36px;
+}
+
+.language-select__button select {
+  border: 0;
+  font-size: 18px;
+  padding-top: 8px;
 }
 
 .policy {
@@ -183,16 +222,6 @@ body {
   padding-left: 10px;
 }
 
-.select-language {
-  padding-left: 20px;
-  //text-align: right;
-}
-
-.select-language__box {
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-}
 
 .sns {
   padding-top: 10px
@@ -219,6 +248,14 @@ body {
     padding-bottom: 160px;
   }
 
+  .box,
+  .contact,
+  .login-error,
+  .policy,
+  .result-index {
+    margin-top: 60px;
+  }
+
   .box__p {
     display: block;
     margin-left: auto;
@@ -230,6 +267,10 @@ body {
     width: 96%;
   }
 
+  .form__textbox {
+    width: 280px;
+  }
+
   .header {
     height: 40px;
   }
@@ -239,16 +280,9 @@ body {
   }
 
   .header__title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
-  .contact,
-  .login-error,
-  .policy,
-  .result-index,
-  .select-language {
-    padding-top: 60px;
-  }
   #follows{
     margin-top : -50px;
     padding-top : 50px;
@@ -267,11 +301,21 @@ body {
 
 /* Mobile S (Galaxy 5S) */
 
-@media screen and (min-width: 360px) {}
+@media screen and (min-width: 360px) {
+
+}
 
 /* Mobile M (iPhone 6) */
 
 @media screen and (min-width: 375px) {
+  .box,
+  .contact,
+  .login-error,
+  .policy,
+  .result-index {
+    margin-top: 64px;
+  }
+
   .header {
     height: 48px;
   }
@@ -284,13 +328,16 @@ body {
     //font-size: 24px;
   }
 
-  .contact,
-  .login-error,
-  .policy,
-  .result-index,
-  .select-language {
-    padding-top: 64px;
+  .language-base__icon {
+    font-size: 26px;
+    width: 40px;
   }
+
+  .language-select__button,
+  .language-select__button select {
+    width: 40px;
+  }
+
   #follows{
     margin-top : -58px;
     padding-top : 58px;
@@ -310,6 +357,14 @@ body {
 /* Mobile L (iPhone 6 Plus, Nexus 5X) */
 
 @media screen and (min-width: 412px) {
+  .box,
+  .contact,
+  .login-error,
+  .policy,
+  .result-index {
+    margin-top: 64px;
+  }
+
   .header {
     height: 52px;
   }
@@ -322,12 +377,18 @@ body {
     font-size: 24px;
   }
 
-  .contact,
-  .login-error,
-  .policy,
-  .result-index,
-  .select-language {
-    padding-top: 64px;
+  .language-base__icon {
+    font-size: 28px;
+    width: 44px;
+  }
+
+  .language-select__button,
+  .language-select__button select {
+    width: 44px;
+  }
+
+  .language-select__button select {
+    padding-top: 12px;
   }
 }
 
@@ -376,6 +437,20 @@ body {
     width: 100%;
   }
 
+  .language-base__icon {
+    font-size: 32px;
+    width: 52px;
+  }
+
+  .language-select__button,
+  .language-select__button select {
+    width: 52px;
+  }
+
+  .language-select__button select {
+    padding-top: 12px;
+  }
+
   .result__box {
     width: 288px;
   }
@@ -386,10 +461,17 @@ body {
 @media screen and (min-width: 1024px) {
   .box {
     height: 28px;
-    margin-top: 20px;
     padding-bottom: 128px;
     padding-top: 100px;
     width: 100%;
+  }
+
+  .box,
+  .contact,
+  .login-error,
+  .policy,
+  .result-index {
+    margin-top: 80px;
   }
 
   .box__p {
@@ -423,13 +505,20 @@ body {
     font-size: 36px;
   }
 
-  .contact,
-  .login-error,
-  .policy,
-  .result-index,
-  .select-language {
-    padding-top: 80px;
+  .language-base,
+  .language-select {
+    left: calc((100% - 1000px)/2);
+    width: 1000px;
   }
+
+  .language-base__icon {
+    font-size: 36px;
+  }
+
+  .language-select__button select {
+    height: 44px;
+  }
+
   #follows{
     margin-top : -70px;
     padding-top : 70px;
