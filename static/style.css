@@ -306,7 +306,15 @@ input[type="submit"] {
 /* Mobile S (Galaxy 5S) */
 
 @media screen and (min-width: 360px) {
+  .language-base__icon {
+    font-size: 26px;
+    width: 40px;
+  }
 
+  .language-select__button,
+  .language-select__button select {
+    width: 40px;
+  }
 }
 
 /* Mobile M (iPhone 6) */
@@ -330,16 +338,6 @@ input[type="submit"] {
 
   .header__title {
     //font-size: 24px;
-  }
-
-  .language-base__icon {
-    font-size: 26px;
-    width: 40px;
-  }
-
-  .language-select__button,
-  .language-select__button select {
-    width: 40px;
   }
 
   #follows{
