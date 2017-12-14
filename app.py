@@ -46,7 +46,7 @@ def index():
 
 
 @app.route('/en')
-def index_id():
+def index_en():
     """English"""
     return return_html(lang='en')
 
