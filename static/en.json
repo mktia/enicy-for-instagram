@@ -1,0 +1,24 @@
+{
+  "language": "English",
+  "keywords": "instagram,follow,follower,mutual,check,f4f,fff",
+  "description": "the web app to check your instagram mutual following, ENICY for Instagram.",
+  "short_description": "ENICY is the web app for easily checking unilateral and mutual following.",
+  "form": {
+    "username": "username",
+    "password": "password",
+    "button": "button"
+  },
+  "page": {
+    "introduction": "WELCOME TO ENICY!",
+    "summary": ["the web app to check your unilateral and mutual instagram following."],
+    "description_top": [
+      "You can use ENICY by your smartphone, PC and Tablet!",
+      "You only need to enter Instagram username and password.",
+      "Available free of charge."
+    ]
+  },
+  "login_failed": [
+    "Oops! Login failed.",
+    "Please login again."
+  ]
+}

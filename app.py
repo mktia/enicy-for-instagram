@@ -11,6 +11,7 @@ basic_information = {
     'twitter': 'enicy_',
     'language_list': [
         {'code': 'ja', 'language': '日本語', 'locale': 'ja_JP'},
+        {'code': 'en', 'language': 'English', 'locale': 'en_US'},
         {'code': 'id', 'language': 'Bahasa Indonesia', 'locale': 'id_ID'},
         {'code': 'pt', 'language': 'português', 'locale': 'pt_BR'},
         {'code': 'ru', 'language': 'русский язык', 'locale': 'ru_RU'},
@@ -42,6 +43,12 @@ def return_html(html_file='index.html', lang='ja', friends=None, follows=None, f
 def index():
     """Japanese"""
     return return_html()
+
+
+@app.route('/en')
+def index_id():
+    """English"""
+    return return_html(lang='en')
 
 
 @app.route('/id')
