@@ -30,7 +30,7 @@ input[type="submit"] {
 }
 
 .box {
-  background: linear-gradient(-135deg, #1400c8, #b900b4, #f50000);
+	background: linear-gradient(-135deg, #d82e86, #ec6b3a);
   height: 28px;
   //margin-top: 20px;
   padding-bottom: 128px;
