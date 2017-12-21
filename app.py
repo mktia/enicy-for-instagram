@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
-from flask import Flask, render_template, request, make_response, Response
+from flask import Flask, render_template, request, make_response, Response, redirect, url_for
 from InstagramAPI import InstagramAPI
 
 app = Flask(__name__)
@@ -91,7 +91,7 @@ def result():
 
     if not api.login():
         print('Failed to login!')
-        return return_html('login_error.html', lang=lang)
+        return redirect(url_for('login_error'))
 
     # Get follows
     api.getSelfUsersFollowing()
@@ -136,6 +136,12 @@ def result():
         followers=followed_only,
         length=length
     )
+
+
+@app.route('/login_error')
+def login_error():
+    lang = request.cookies.get('language', None)
+    return return_html('login_error.html', lang=lang)
 
 
 @app.route('/contact')
