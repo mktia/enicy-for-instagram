@@ -101,6 +101,8 @@ def result():
     api.getSelfUserFollowers()
     followers = api.LastJson['users']
 
+    api.logout()
+
     # The list of accounts you follow and be followed by
     friends = []
     # The list of accounts you follow but be not followed by
